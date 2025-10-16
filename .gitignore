@@ -1,0 +1,11 @@
+# Node deps
+node_modules/
+
+# Build output
+dist/
+src/assets/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
