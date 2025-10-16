@@ -10,18 +10,15 @@ Why this setup?
 
 Getting started
 
-1. Install dependencies
-   npm install
+1. Install dependencies `npm install`
 
-2. Development
-   npm run dev
+2. Development `npm run dev`
 
    - Runs esbuild in watch mode (writes bundle to src/assets/app.js)
    - Runs sass in watch mode (writes CSS to src/assets/css/main.css)
    - Serves the src/ folder at http://localhost:3000 (live reload)
 
-3. Build for production
-   npm run build
+3. Build for production `npm run build`
 
    - Produces a `dist/` folder with minified assets and copied HTML.
 
