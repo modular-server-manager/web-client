@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/modular_server_manager.egg-info/PKG-INFO
+src/modular_server_manager.egg-info/SOURCES.txt
+src/modular_server_manager.egg-info/dependency_links.txt
+src/modular_server_manager.egg-info/requires.txt
+src/modular_server_manager.egg-info/top_level.txt

@@ -1,6 +1,10 @@
 # Node deps
 node_modules/
 
+# Python deps
+env/
+__pycache__/
+
 # Build output
 dist/
 src/assets/
