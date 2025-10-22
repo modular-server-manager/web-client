@@ -1,7 +1,7 @@
 [project]
-name = "modular-server-manager"
-version = "0.1.3"
-description = "Modular Server Manager"
+name = "modular-server-manager-web-client"
+version = "0.1.0"
+description = "MSM Web Client"
 authors = [
     { name = "Antoine BUIREY", email = "antoine.buirey@gmail.com" }
 ]
@@ -24,4 +24,8 @@ dependencies = [
     "http_code @ https://github.com/T0ine34/python-sample/releases/download/1.1.6/http_code-1.1.6-py3-none-any.whl",
     "singleton @ https://github.com/T0ine34/python-sample/releases/download/1.1.6/singleton-1.1.6-py3-none-any.whl",
     "version @ https://github.com/T0ine34/python-sample/releases/download/1.1.6/version-1.1.6-py3-none-any.whl",
+    "modular-server-manager @ https://github.com/modular-server-manager/server/releases/download/0.1.4/modular_server_manager-0.1.4-py3-none-any.whl"
 ]
+
+[tool.setuptools]
+packages = ["modular_server_manager_web_client"]

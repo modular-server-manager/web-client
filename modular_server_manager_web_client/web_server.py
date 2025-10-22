@@ -11,6 +11,7 @@ from typing import Any
 from .utils import NoLog
 from .http_server import HttpServer
 from .websocket_server import WebSocketServer
+from modular_server_manager import UserInterfaceModules
 
 Logger.set_module("User Interface.Web Server")
 
@@ -157,3 +158,6 @@ class WebServer(HttpServer, WebSocketServer):
             "server_name": server_name,
             "player_name": player_name
         })
+
+
+UserInterfaceModules['web'] = WebServer

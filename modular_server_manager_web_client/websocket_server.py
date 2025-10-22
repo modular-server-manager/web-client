@@ -2,7 +2,7 @@ import socketio
 from gamuLogger import Logger
 from typing import Any
 
-from ..Base_interface import BaseInterface      # will be changed to be an external dependency
+from modular_server_manager import BaseInterface
 
 Logger.set_module("User Interface.WebSock Server")
 

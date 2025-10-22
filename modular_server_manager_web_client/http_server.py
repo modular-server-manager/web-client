@@ -13,8 +13,7 @@ from http_code import HttpCode as HTTP
 from version import Version
 
 from .utils import str2bool, guess_type, RE_MC_SERVER_NAME
-from ..Base_interface import BaseInterface      # will be changed to be an external dependency
-from ..database.types import AccessLevel        # will be changed to be an external dependency
+from modular_server_manager import BaseInterface, AccessLevel
 
 Logger.set_module("User Interface.Http Server")
 
