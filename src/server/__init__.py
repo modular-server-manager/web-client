@@ -1,1 +1,1 @@
-from .web_server import WebServer
+from .web_server import WebServer as Interface
