@@ -17,7 +17,7 @@ from modular_server_manager import BaseInterface, AccessLevel
 
 Logger.set_module("User Interface.Http Server")
 
-STATIC_PATH = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) + "/client"
+STATIC_PATH = os.path.abspath(__file__) + "/client"
 
 T = TypeVar('T')
 
@@ -115,6 +115,7 @@ class HttpServer(BaseInterface):
 
     def __config_static_route(self):
         self.__app.static_folder = STATIC_PATH
+        Logger.debug(f"Configuring static route with STATIC_PATH: {STATIC_PATH}")
 
         @self.__app.route('/')
         def root():

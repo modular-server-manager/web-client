@@ -7,7 +7,7 @@ __pycache__/
 
 # Build output
 dist/
-src/assets/
+src/web/assets/
 
 # Editor / OS
 .vscode/
@@ -16,3 +16,5 @@ src/assets/
 
 *.log
 *.egg-info/
+
+modular_server_manager_web_client/

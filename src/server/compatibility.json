@@ -1,0 +1,10 @@
+{
+    "$schema": "https://raw.githubusercontent.com/AntoineBuirey/xml-json-schema/refs/tags/1.2.1/modular-server-manager/compatibility.schema",
+    "compatibility": {
+        "0.1.4": {
+            "min_module_version": "0.1.0",
+            "max_module_version": "0.1.0",
+            "recommended_module_version": "0.1.0"
+        }
+    }
+}

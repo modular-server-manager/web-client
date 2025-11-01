@@ -29,3 +29,10 @@ dependencies = [
 
 [tool.setuptools]
 packages = ["modular_server_manager_web_client"]
+
+package-data = { "modular_server_manager_web_client" = [
+    "client/*",
+    "client/**/*",
+    "compatibility.json",
+] }
+include-package-data = true
