@@ -10,8 +10,8 @@
             "max_module_version": "0.1.0"
         },
         "0.1.5": {
-            "min_module_version": "0.1.1",
-            "max_module_version": "0.1.1"
+            "min_module_version": "0.1.0",
+            "max_module_version": "0.1.0"
         }
     }
 }
