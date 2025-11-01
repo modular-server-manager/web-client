@@ -17,7 +17,7 @@ def patch_pyproject_version(version: str):
         content = f.read()
 
     new_content = re.sub(
-        r'version\s*=\s*"[0-9a-zA-Z\.\-\_]+"',
+        r'^version\s*=\s*"[0-9a-zA-Z\.\-\_]+"',
         f'version = "{version}"',
         content
     )
