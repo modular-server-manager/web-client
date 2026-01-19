@@ -1,10 +1,6 @@
 # Node deps
 node_modules/
 
-# Python deps
-env/
-__pycache__/
-
 # Build output
 dist/
 src/web/assets/
@@ -16,5 +12,3 @@ src/web/assets/
 
 *.log
 *.egg-info/
-
-modular_server_manager_web_client/
