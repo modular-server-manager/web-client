@@ -2,12 +2,12 @@
     "name": "web-client",
     "version": "0.1.0",
     "private": true,
-    "description": "Web client (TypeScript + SCSS + SCSS + HTML) — lightweight build using esbuild and sass",
+    "description": "Web modular_server_manager_web_client/client (TypeScript + SCSS + SCSS + HTML) — lightweight build using esbuild and sass",
     "scripts": {
-        "dev": "concurrently \"esbuild src/main.ts --bundle --outfile=src/assets/app.js --sourcemap --watch\" \"sass src/styles/main.scss src/assets/css/main.css --watch\" \"live-server src --port=3000 --open=./index.html\"",
-        "build": "rimraf dist && mkdir -p dist && sass src/styles/main.scss dist/assets/css/main.css --no-source-map && esbuild src/main.ts --bundle --minify --target=es2017 --outfile=dist/assets/app.js && cpy \"src/*.html\" dist/",
-        "clean": "rimraf dist src/assets",
-        "format": "prettier --write \"src/**/*.{ts,scss,html}\""
+        "dev": "concurrently \"esbuild src/web/main.ts --bundle --outfile=src/web/assets/app.js --sourcemap --watch\" \"sass src/web/styles/main.scss src/web/assets/css/main.css --watch\" \"live-server src/web --port=3000 --open=./index.html\"",
+        "build": "rimraf modular_server_manager_web_client/client && mkdir -p modular_server_manager_web_client/client && sass src/web/styles/main.scss modular_server_manager_web_client/client/assets/css/main.css --no-source-map && esbuild src/web/main.ts --bundle --minify --target=es2017 --outfile=modular_server_manager_web_client/client/assets/app.js && cpy \"src/web/*.html\" modular_server_manager_web_client/client/",
+        "clean": "rimraf modular_server_manager_web_client/client src/web/assets",
+        "format": "prettier --write \"src/web**/*.{ts,scss,html}\""
     },
     "devDependencies": {
         "esbuild": "^0.19.0",

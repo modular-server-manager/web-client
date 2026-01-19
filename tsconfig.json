@@ -11,6 +11,6 @@
     "resolveJsonModule": true,
     "lib": ["ES2019", "DOM"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/web/**/*"],
   "exclude": ["node_modules", "dist"]
 }
