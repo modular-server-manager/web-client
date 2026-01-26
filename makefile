@@ -28,11 +28,11 @@ VERSION_STR = $(shell echo $(VERSION) | sed "s/-dev-[a-z0-9]*//; s/-dev+.*//")
 WHEEL = modular_server_manager_web_client-$(VERSION_STR)-py3-none-any.whl
 ARCHIVE = modular_server_manager_web_client-$(VERSION_STR).tar.gz
 
-SRV_SRC_DIR = src/server/
-SRV_SRC = $(shell find $(SRV_SRC_DIR) -type f -name "*.py") $(SRV_SRC_DIR)compatibility.json
-SRV_DIST = $(patsubst $(SRV_SRC_DIR)%,$(BUILD_DIR)%,$(SRV_SRC))
+# SRV_SRC_DIR = src/server/
+# SRV_SRC = $(shell find $(SRV_SRC_DIR) -type f -name "*.py") $(SRV_SRC_DIR)compatibility.json
+# SRV_DIST = $(patsubst $(SRV_SRC_DIR)%,$(BUILD_DIR)%,$(SRV_SRC))
 
-WEB_SRC_DIR = src/web/
+WEB_SRC_DIR = src/
 WEB_SRC = $(shell find $(WEB_SRC_DIR) -type f -name "*.html" -o -name "*.scss" -o -name "*.ts")
 WEB_DIST = $(WEB_BUILD_DIR)/index.html $(WEB_BUILD_DIR)/assets/css/main.css $(WEB_BUILD_DIR)/assets/app.js
 
@@ -43,21 +43,21 @@ print-%:
 dist:
 	mkdir -p dist
 
-dist/$(WHEEL): $(SRV_DIST) $(PYPROJECT) $(WEB_DIST) $(PYTHON_LIB)/build dist
-	mkdir -p $(TEMP_DIR)
-	$(PYTHON) build_package.py --outdir $(TEMP_DIR) --wheel --version $(VERSION_STR)
-	mkdir -p dist
-	mv $(TEMP_DIR)/*.whl dist/$(WHEEL)
-	rm -rf $(TEMP_DIR)
-	@echo "Building wheel package complete."
+# dist/$(WHEEL): $(WEB_DIST) # $(SRV_DIST) $(PYPROJECT) $(PYTHON_LIB)/build dist
+# 	mkdir -p $(TEMP_DIR)
+# 	$(PYTHON) -m build --outdir $(TEMP_DIR) --wheel
+# 	mkdir -p dist
+# 	mv $(TEMP_DIR)/*.whl dist/$(WHEEL)
+# 	rm -rf $(TEMP_DIR)
+# 	@echo "Building wheel package complete."
 
-dist/$(ARCHIVE): $(SRV_DIST) $(PYPROJECT) $(WEB_DIST) $(PYTHON_LIB)/build dist
-	mkdir -p $(TEMP_DIR)
-	$(PYTHON) build_package.py --outdir $(TEMP_DIR) --sdist --version $(VERSION_STR)
-	mkdir -p dist
-	mv $(TEMP_DIR)/*.tar.gz dist/$(ARCHIVE)
-	rm -rf $(TEMP_DIR)
-	@echo "Building archive package complete."
+# dist/$(ARCHIVE): $(WEB_DIST) # $(SRV_DIST) $(PYPROJECT) $(PYTHON_LIB)/build dist
+# 	mkdir -p $(TEMP_DIR)
+# 	$(PYTHON) build_package.py --outdir $(TEMP_DIR) --sdist --version $(VERSION_STR)
+# 	mkdir -p dist
+# 	mv $(TEMP_DIR)/*.tar.gz dist/$(ARCHIVE)
+# 	rm -rf $(TEMP_DIR)
+# 	@echo "Building archive package complete."
 
 $(WEB_DIST): $(WEB_SRC)
 	npm run build
@@ -72,6 +72,9 @@ $(INSTAL_PATH) : dist/$(WHEEL)
 	@echo "Installing package..."
 	@$(PYTHON) -m pip install --upgrade --force-reinstall dist/$(WHEEL)
 	@echo "Package installed."
+
+
+web: $(WEB_DIST)
 
 
 build: dist/$(WHEEL) dist/$(ARCHIVE)

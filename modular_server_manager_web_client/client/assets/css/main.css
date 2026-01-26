@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #0f172a 0%, rgb(6.9473684211, 10.6526315789, 19.4526315789) 100%);
+  color: #e6eef8;
+}
+
+#app {
+  max-width: 900px;
+  margin: 6rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(2, 6, 23, 0.6);
+}
+
+h1 {
+  margin: 0 0 0.5rem 0;
+  color: #60a5fa;
+}
+
+p {
+  color: #93c5fd;
+}
