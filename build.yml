@@ -1,0 +1,45 @@
+imports:
+  - path: package.json
+    as: project
+  - path: ../common.build.yml
+    as: common
+
+vars:
+  dist_dir: ${PROJECT_DIR}/dist
+  src_dir: ${PROJECT_DIR}/src
+  
+
+rules:
+  build-css:
+    tags:
+      - build
+    required-files:
+      - ${src_dir}/styles/**/*.scss
+    expected-files:
+      - ${dist_dir}/assets/css/main.css
+    commands:
+      - mkdir -p ${dist_dir}
+      - npm run build:styles
+
+  build-js:
+    tags:
+      - build
+    required-files:
+      - ${src_dir}/scripts/**/*.ts
+      - ${src_dir}/main.ts
+    expected-files:
+      -  ${dist_dir}/assets/app.js
+    commands:
+      - mkdir -p ${dist_dir}
+      - npm run build:js
+
+  build-html:
+    tags:
+      - build
+    required-files:
+      - ${src_dir}/index.html
+    expected-files:
+      -  ${dist_dir}/index.html
+    commands:
+      - mkdir -p  ${dist_dir}
+      - npm run build:html

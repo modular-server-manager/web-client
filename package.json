@@ -5,7 +5,10 @@
     "description": "Web client (TypeScript + SCSS + SCSS + HTML) — lightweight build using esbuild and sass",
     "scripts": {
         "dev": "concurrently \"esbuild src/main.ts --bundle --outfile=src/assets/app.js --sourcemap --watch\" \"sass src/styles/main.scss src/assets/css/main.css --watch\" \"live-server src --port=3000 --open=./index.html\"",
-        "build": "rimraf dist && mkdir -p dist && sass src/styles/main.scss dist/assets/css/main.css --no-source-map && esbuild src/main.ts --bundle --minify --target=es2017 --outfile=dist/assets/app.js && cpy \"src/*.html\" dist/",
+        "build:styles": "sass src/styles/main.scss dist/assets/css/main.css --no-source-map",
+        "build:js": "esbuild src/main.ts --bundle --minify --target=es2017 --outfile=dist/assets/app.js",
+        "build:html": "cpy \"src/*.html\" dist/",
+        "build": "rimraf dist && mkdir -p dist && npm run build:styles && npm run build:js && npm run build:copy",
         "clean": "rimraf dist src/assets",
         "format": "prettier --write \"src/**/*.{ts,scss,html}\""
     },
